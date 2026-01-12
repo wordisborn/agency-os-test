@@ -36,6 +36,5 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          prompt: 'Please review this pull request: ${{ github.repository }}/pull/${{ github.event.pull_request.number }}'
-          # Cost guardrail: limit how long it thinks
-          claude_args: "--max-turns 5"
+          prompt: 'Review the changes in this PR and provide feedback on code quality, potential bugs, and improvements.'
+          show_full_output: true

@@ -1,3 +1,3 @@
 # haiku-resume
 
-Test integration v2 - verifying workflow permissions.
+Testing GitHub integration with Claude Code.

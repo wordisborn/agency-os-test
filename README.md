@@ -53,6 +53,33 @@ Run ESLint to check code quality:
 npm run lint
 ```
 
+## API Endpoints
+
+### Health Check
+
+The application provides a health check endpoint for monitoring and load balancer health checks.
+
+**Endpoint:** `GET /api/health`
+
+**Response:**
+```json
+{
+  "status": "ok",
+  "timestamp": "2026-01-12T12:34:56.789Z"
+}
+```
+
+**Example:**
+```bash
+curl http://localhost:3000/api/health
+```
+
+**Features:**
+- Returns HTTP 200 when the application is running
+- No authentication required (public endpoint)
+- Includes cache control headers to prevent stale responses
+- Response time typically under 50ms
+
 ## Deployment
 
 This application is designed to deploy on Vercel:
@@ -76,6 +103,7 @@ For more details, see the [Next.js deployment documentation](https://nextjs.org/
 ```
 .
 ├── app/              # Next.js App Router pages and layouts
+│   └── api/          # API routes
 ├── public/           # Static assets
 ├── openspec/         # OpenSpec specifications and changes
 ├── .github/          # GitHub workflows (Claude Code integration)
